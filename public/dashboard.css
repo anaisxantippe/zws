@@ -1,0 +1,152 @@
+/* ------------- TOP NAVBAR -------------- */
+.topbar {
+    width: fitting;
+    height: 5rem;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+  }
+.new-task {
+    color: var(--secondary-light);
+}
+.logo {
+    margin-left: 15rem;
+    margin-right: 2rem;
+    height: 4.5rem;
+}
+.siteTitle {
+    font-size: 3rem;
+    color: var(--primary-light);
+}
+/* ------------- CALENDAR -------------- */
+.calendar-box {
+    height: 40rem;
+    width: 48%;
+    margin: 0;
+}
+/* ------------- TASKS -------------- */
+.tasks {
+    border-radius: 20px;
+    width: 50%;
+    max-height: 36.3rem;
+    background-color: var(--bg-secondary);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.taskbox {
+    margin: 0.6rem;
+    padding: 1rem;
+    width: 28%;
+    max-height: 16rem;
+    border-radius: 20px;
+    background-color: var(--bg-tertiary);
+    overflow-y: auto; 
+}
+/* scrollbar */
+.taskbox::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+  
+.taskbox::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+  }
+  
+.taskbox::-webkit-scrollbar-thumb {
+    background: #e2267b;
+  }
+/* fields inside the tasksboxes */
+.task-title {
+    background-color: #596469;
+    border-radius: 5px;
+    height: 2.5rem;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.task-start {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+.start {
+    font-weight: bold;
+    color: var(--secondary-light);
+}
+.end {
+    font-weight: bold;
+    color: var(--secondary-light);
+}
+.task-desc {
+    text-align: justify;
+    margin-bottom: 0.5rem;
+}
+.task-users {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+/* ------------- NOTES -------------- */
+.notes-bigbox {
+    border-radius: 20px;
+    width: 48.2%;
+    height: 23rem;
+    margin: 0;
+    background-color: var(--bg-secondary);
+}
+.notes {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.box-title {
+    font-size: 1.8rem;
+    color: var(--primary-light);
+    text-align: center;
+}
+.notebox {
+    margin: 1.6rem;
+    padding: 1rem;
+    max-width: 28%;
+    max-height: 20rem;
+    border-radius: 20px;
+    background-color: var(--bg-tertiary);
+    overflow-y: auto;  
+}
+/* scrollbar */
+.notebox::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+.notebox::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+  }
+.notebox::-webkit-scrollbar-thumb {
+    background: #e2267b;
+  }
+  /* fields inside the noteboxes */
+.note-title {
+    background-color: #596469;
+    border-radius: 5px;
+    height: 2.5rem;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.note-desc {
+    text-align: justify;
+    margin-bottom: 0.5rem;
+}
+/* ------------- TOOLBOX -------------- */
+.toolbox {
+    border-radius: 20px;
+    width: 50%;
+    height: 23rem;
+    margin: 0;
+    background-color: var(--bg-secondary);
+}
+/* --------------- FORM ---------------- */
+.form {
+    display: flex;
+    flex-flow: column;
+}

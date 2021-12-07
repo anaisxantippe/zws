@@ -1,0 +1,51 @@
+:root {
+    font: 14px 'Exo', sans-serif;
+    --text: #f4f4f6;
+    --primary: #e2267b;
+    --primary-light: #e95d9c;
+    --primary-dark: #b4185e;
+    --secondary: #0cc7d4;
+    --secondary-light : #2be5f3;
+    --attention: #db7c26;
+    --bg-primary: #1d282b;
+    --bg-secondary: #2b3a3e;
+    --bg-tertiary: #404f56;
+    --transition-speed: width 800ms ease, height 800ms ease;
+  }
+  
+  /* ----------------------------- BODY ----------------------------- */
+  
+  body {
+    color: var(--text);
+    background-color: var(--bg-primary);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  body::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: #e2267b;
+  }
+  
+  /* ----------------------------- MAIN ----------------------------- */
+  
+  main {
+    transition: var(--transition-speed);
+    width: fitting;
+    height: 100%;
+    margin-left: 10rem;
+    padding: 1rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    }

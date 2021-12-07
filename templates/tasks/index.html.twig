@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tasks index{% endblock %}
+
+{% block body %}
+    <h1>Tasks index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>TaskName</th>
+                <th>TaskStart</th>
+                <th>TaskDeadline</th>
+                <th>TaskDesc</th>
+                <th>TaskUsers</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for task in tasks %}
+            <tr>
+                <td>{{ task.id }}</td>
+                <td>{{ task.taskName }}</td>
+                <td>{{ task.taskStart ? task.taskStart|date('Y-m-d') : '' }}</td>
+                <td>{{ task.taskDeadline ? task.taskDeadline|date('Y-m-d') : '' }}</td>
+                <td>{{ task.taskDesc }}</td>
+                <td>{{ task.taskUsers }}</td>
+                <td>
+                    <a href="{{ path('tasks_show', {'id': task.id}) }}">show</a>
+                    <a href="{{ path('tasks_edit', {'id': task.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('tasks_new') }}">Create new</a>
+{% endblock %}

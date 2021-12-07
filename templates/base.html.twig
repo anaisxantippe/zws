@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="https://i.ibb.co/C5vBpJw/9.png">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {# FULLCALENDAR  CSS #}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css" integrity="sha256-16PDMvytZTH9heHu9KBPjzrFTaoner60bnABykjNiM0=" crossorigin="anonymous">
+        {# MY OWN CSS #}
+        <link rel="stylesheet" type="text/css" href="/base.css"></link>
+        <link rel="stylesheet" type="text/css" href="/nav.css"></link>
+        <link rel="stylesheet" type="text/css" href="/index.css"></link>
+        <link rel="stylesheet" type="text/css" href="/dashboard.css"></link>
+        {# FONTS #}
+        <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+    <nav class="navbar">
+
+        <ul class="navbar-nav">
+
+            <!-- Navbar header -->
+
+            <div class="nav-header">
+                <img class="header-img" src="https://i.ibb.co/m0M2c7c/Untitled-drawing.png" alt="header">
+
+                <div class="datetime-closed">
+                    <p class="datetime">
+                        <div class="date">{{ "now"|format_date(locale='fr_FR', pattern="dd/MM/Y")}}</div>
+                        <br><div class="time">{{ "now"|format_date(locale='fr_FR', pattern="k:m") }}</div>
+                    </p>
+                </div>
+        
+                <div class="datetime-opened">
+                    <p class="datetime">
+                        <div class="date">{{ "now"|format_date(locale='fr_FR', pattern='EEEE dd MMMM YYYY') }}</div>
+                        <br><div class="time">{{ "now"|format_date(locale='fr_FR', pattern="k:m") }}</div>
+                        {# find a function to calculate the time betwwen the moment the user got connected and now #}
+                        {# <br><div class="worktime">Temps de travail 5:58</div> #}
+                    </p>
+                </div>
+        
+                <li class="nav-item">
+                    <!-- find a way to render the current user's profile picture -->
+                    <!-- in the meantime, here comes a static image -->
+                    <img class="pp" src="https://i.ibb.co/qyqN5JR/182-1829287-cammy-lin-ux-designer-circle-picture-profile-girl.png" alt="static pp">
+                    <p class="hello">Bonjour, {{ user.pseudo }} !</p>
+                </li>
+            </div>
+            
+
+            <!-- Personnal menu with day to day usefull links -->
+
+                <li class="nav-item">
+                    <a href="{{ path('dashboard') }}" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span class="link-text">Dashboard</span>
+                    </a>
+                </li>
+        
+                <li class="nav-item">
+                    <a href="{{ path ('planning') }}" class="nav-link">
+                        <i class="far fa-calendar"></i>
+                        <span class="link-text">Planning</span>
+                    </a>
+                </li>
+
+            <!-- Links to redirect to different workspaces -->  
+
+                <li class="nav-item">
+                    <a href="{{ path ('admin') }}" class="nav-link">
+                        <img src="https://i.ibb.co/C5vBpJw/9.png" alt="octo" class="octo" id="octo9">
+                        <span class="link-text">Administration</span>
+                    </a>
+                </li>    
+
+                <li class="nav-item">
+                    <a href="{{ path ('rh') }}" class="nav-link">
+                        <img src="https://i.ibb.co/b7J0WQb/7.png" alt="octo" class="octo" id="octo8">
+                        <span class="link-text">Res. Humaines</span>
+                    </a>
+                </li>    
+
+                <li class="nav-item">
+                    <a href="{{ path ('marketing') }}" class="nav-link">
+                        <img src="https://i.ibb.co/9qhhvhd/8.png" alt="octo" class="octo" id="octo7">
+                        <span class="link-text">Commercial</span>
+                    </a>
+                </li>    
+
+                <li class="nav-item">
+                    <a href="{{ path ('comm') }}" class="nav-link">
+                        <img src="https://i.ibb.co/pJ55NBQ/6.png" alt="octo" class="octo" id="octo6">
+                        <span class="link-text">Communication</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ path ('event') }}" class="nav-link">
+                        <img src="https://i.ibb.co/j6SBZ4Y/5.png" alt="octo" class="octo" id="octo5">
+                        <span class="link-text">Événementiel</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ path ('webtv') }}" class="nav-link">
+                        <img src="https://i.ibb.co/bsGmYdq/4.png" alt="octo" class="octo" id="octo4">
+                        <span class="link-text">WebTV</span>
+                    </a>
+                </li>
+        
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <img src="https://i.ibb.co/KqfdmRr/3.png" alt="octo" class="octo" id="octo3">
+                        <span class="link-text">Esport</span>
+                    </a>
+                </li>
+        
+                <li class="nav-item">
+                    <a href="{{ path ('community') }}" class="nav-link">
+                        <img src="https://i.ibb.co/YXhzZWT/2.png" alt="octo" class="octo" id="octo2">
+                        <span class="link-text">Communautaire</span>
+                    </a>
+                </li>
+        
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <i class="fas fa-spider"></i>
+                        <span class="link-text">Bug ?</span>
+                    </a>
+                </li>
+
+        </ul>
+    </nav>
+    <nav class="topbar">
+        <img class="logo" src="http://image.noelshack.com/fichiers/2019/46/6/1573928060-zephyr-logo-2020-color-contouring-02.png" alt="logo zephyr" name="logo zephyr"/>
+        <p class="siteTitle">ZEPHYR WORKSPACE</p>
+    </nav>
+    <main>
+        {% block body %}
+        {% endblock %}
+    </main>
+    </body>
+        {% block javascripts %}
+                <!-- ICONS -->
+        <script src="https://kit.fontawesome.com/94afbe7ce0.js" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
+        <!-- FULLCALENDAR -->
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js" integrity="sha256-XOMgUu4lWKSn8CFoJoBoGd9Q/OET+xrfGYSo+AKpFhE=" crossorigin="anonymous"></script>
+        <script src="/js/calendar.js"></script>
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+</html>

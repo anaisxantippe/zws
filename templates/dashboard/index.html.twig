@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue sur ton Dashboard !{% endblock %}
+
+{% block body %}
+<div class="calendar-box">
+    <div class="calendar">
+    </div>
+    <div class="new-task">
+        <a class="new-task" href="{{ path('tasks_new') }}">Ajouter une tâche</a>
+    </div>
+</div>
+<div class="tasks">
+{% for task in task %}
+    <div class="taskbox">
+        <div class="task-title">
+            {{ task.taskName }}
+        </div>
+        <div class="task-start">
+            Du <span class="start">{{ task.taskStart | date('d/m/Y') }}</span>
+            au <span class="end">{{ task.taskDeadline | date('d/m/Y') }}</span>
+        </div>
+        <div class="task-desc">
+            {{ task.taskDesc }}
+        </div>
+        <div class="task-users">
+            {{ task.taskUsers }}
+        </div>
+    </div>
+{% endfor %}
+
+</div>
+<div class="notes-bigbox">
+    <p class="box-title">MES DERNIÈRES NOTES</p>
+    <div class="notes">
+        {% for note in note %}
+        <div class="notebox">
+            <div class="note-title">
+                {{ note.noteName }}
+            </div>
+            <div class="note-desc">
+                {{ note.noteContent }}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class="toolbox">
+    <div></div>
+</div>
+{% endblock %}
